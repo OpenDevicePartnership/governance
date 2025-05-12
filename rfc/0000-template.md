@@ -35,10 +35,9 @@ design decisions.
 - What related issues do you consider out of scope for this RFC that could be addressed in the future independently of
   the solution that comes out of this RFC?
 
-## Prior Art (Existing PI C Implementation)
+## Prior Art
 
-Briefly describe and/or link to existing documentation about the same functionality in existing code (e.g. C PI
-codebase). This only needs to be present if such functionality exists and it was particularly influential in the design
+Briefly describe and/or link to existing documentation about the same functionality in existing code. This only needs to be present if such functionality exists and it was particularly influential in the design
 of this RFC or this RFC deviates in a significant way from the existing implementation that feature users should be
 aware of.
 

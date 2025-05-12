@@ -1,6 +1,6 @@
-# Charter for the Open Device Partnership (ODP) Organization
+# Charter for the Open Device Partnership
 
-This is the organizational charter for the Open Device Partnership (ODP) Organization (the "Organization"). By adding their name to the [Steering Committee.md file](./STEERING-COMMITTEE.md), Steering Committee members agree as follows.
+This is the organizational charter for the Open Device Partnership (ODP, the "Organization"). By adding their name to the [Steering Committee.md file](./STEERING-COMMITTEE.md), Steering Committee members agree as follows.
 
 ## 1. Mission
 
@@ -16,7 +16,7 @@ The Steering Committee will appoint a Chair responsible for organizing Steering 
 
 ## 3. Voting
 
-**3.1. Decision Making**. The Steering Committee will strive for all decisions to be made by consensus. While explicit agreement of the entire Steering Committee is preferred, it is not required for consensus. Rather, the Steering Committee will determine consensus based on their good faith consideration of a number of factors, including the dominant view of the Steering Committee and nature of support and objections. The Steering Committee will document evidence of consensus in accordance with these requirements. If consensus cannot be reached, the Steering Committee will make the decision by a vote.
+**3.1. Decision Making**. The Steering Committee will strive for all decisions to be made by consensus. While explicit agreement of the entire Steering Committee is preferred, it is not required for consensus. Rather, the Steering Committee will determine consensus based on their good faith consideration of a number of factors, including the dominant view of the Steering Committee and nature of support and objections. The Steering Committee will document evidence of consensus (often preferring the RFC process) in accordance with these requirements. If consensus cannot be reached, the Steering Committee will make the decision by a vote.
 
 **3.2. Voting**. The Steering Committee Chair will call a vote with reasonable notice to the Steering Committee, setting out a discussion period and a separate voting period. Any discussion may be conducted in person or electronically by text, voice, or video. The discussion will be open to the public. In any vote, each voting representative will have one vote. Except as specifically noted elsewhere in this Charter, decisions by vote require a simple majority vote of all voting members.
 
@@ -44,13 +44,14 @@ Information disclosed in connection with any of the Organization's activities, i
 
 In order to be eligible to be a Organization project, a project must:
 
-* Be approved by the Steering Committee.
+* Be approved by the Steering Committee using the established [RFC Process](./rfc/README.md)
 * Agree to follow the guidance and direction of the Steering Committee.
 * Use only the following outbound licenses or agreements unless otherwise approved:
-  - For code, a license on the Open Source Initiative's list of [Popular Licenses](https://opensource.org/licenses).
-  - For data, a license on the Open Knowledge Foundation's list of [Recommended Conformant Licenses](http://opendefinition.org/licenses/).
-  - For specifications, a community developed and maintained specification agreement, such the [Open Web Foundation Agreements](https://www.openwebfoundation.org/the-agreements) or [Community Specification Agreement](https://github.com/CommunitySpecification/1.0).
-* Include and adhere to the Organization's policies, including the [trademark policy](./TRADEMARKS.md), the [antitrust policy](./ANTITRUST.md), and the [code of conduct](./CODE-OF-CONDUCT.md).
+  - For code, [MIT License](https://opensource.org/license/mit) or [BSD-2-Clause-Patent License](https://opensource.org/license/bsdpluspatent)
+  - For data, [MIT License](https://opensource.org/license/mit)
+  - If you would like to make use of another license, please first inquire via the ODP [Zulip Server](https://opendevicepartnership.zulipchat.com/)
+  - For specifications, a community developed and maintained specification agreement, such the [Open Web Foundation Agreements](https://www.openwebfoundation.org/the-agreements) or [Community Specification Agreement](https://github.com/CommunitySpecification/1.0)
+* Include and adhere to the Organization's policies, including the [trademark policy](./TRADEMARKS.md), the [antitrust policy](./ANTITRUST.md), and the [code of conduct](./CODE-OF-CONDUCT.md)
 
 ## 9. Amendments
 
