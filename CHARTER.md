@@ -1,4 +1,4 @@
-# Charter for the Open Device Partnership
+# The Open Device Partnership Charter
 
 This is the organizational charter for the Open Device Partnership (ODP, the "Organization"). By adding their name to the [Steering Committee.md file](./STEERING-COMMITTEE.md), Steering Committee members agree as follows.
 

@@ -1,13 +1,13 @@
 # RFC: `<Title>`
 
-One paragraph description of the RFC.
+Provide a one paragraph description of the RFC.
 
 ## Change Log
 
 This text can be modified over time. Add a change log entry for every change made to the RFC.
 
-- YYYY-MM-DD: Initial RFC created.
-- YYYY-MM-DD: Updated RFC item (x) based on feedback from the community.
+- YYYY-MM-DD: Initial RFC created
+- YYYY-MM-DD: Updated RFC item (x) based on feedback from the community
 
 ## Motivation
 
@@ -21,11 +21,11 @@ technical audience and should not assume that the reader is familiar with the te
 
 ## Goals
 
-Succinct ordered list of the the goals for this feature. It should be easy to associate design choices with goals.
+Provide a succinct ordered list of the the goals for this change/feature. It should be easy to associate design choices with goals.
 
 ## Requirements
 
-Succinct ordered list of the requirements for this feature. It should be easy to associate design choices with
+Provide a succinct ordered list of the requirements for this change/feature. It should be easy to associate design choices with
 requirements. This does not need to be exhaustive, but should cover the most important requirements that influenced
 design decisions.
 
@@ -37,7 +37,7 @@ design decisions.
 
 ## Prior Art
 
-Briefly describe and/or link to existing documentation about the same functionality in existing code. This only needs to be present if such functionality exists and it was particularly influential in the design
+Briefly describe and/or link to existing documentation about the same functionality in existing code or similar processes. This only needs to be present if such functionality exists and it was particularly influential in the design
 of this RFC or this RFC deviates in a significant way from the existing implementation that feature users should be
 aware of.
 
@@ -48,17 +48,17 @@ aware of.
 
 ## Rust Code Design
 
-Include diagrams, code snippets, and other design artifacts that are relevant to the proposal. All public facing
+Include diagrams, process flows, code snippets, and other design artifacts that are relevant to the proposal. If relevant, all public facing
 APIs should be included in this section. Rationale for the interfaces chosen should be included here as relevant.
 
 ## Guide-Level Explanation
 
-Explain the proposal as if it was already included in code documentation and you were teaching it to another Rust
+For RFCs affecting code design, explain the proposal as if it was already included in code documentation and you were teaching it to another Rust
 programmer. That generally means:
 
-- Introducing new named concepts.
-- Explaining the feature largely in terms of examples.
+- Introducing new named concepts
+- Explaining the feature largely in terms of examples
 - Explaining how Rust programmers should *think* about the feature, and how it should impact the way they interact
-  with this feature. It should explain the impact as concretely as possible.
+  with this feature. It should explain the impact as concretely as possible
 - If applicable, describe the differences between teaching this to existing firmware programmers and those learning
-  the feature the first time in the Rust codebase.
+  the feature the first time in the Rust codebase

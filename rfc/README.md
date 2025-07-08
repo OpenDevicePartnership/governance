@@ -52,8 +52,8 @@ This will help you refine your thinking and build consensus before you invest ef
 
 Each RFC goes through these stages:
 
-- **Draft**: The initial state when a PR is opened. Note that the draft state refers to the RFC and not the PR (it is a normal PR). The community and relevant teams provide feedback.
-- **Final Comment Period (FCP)**: Once there is rough consensus, an FCP of 7–10 days starts. During this time, final objections can be raised.
+- **Draft**: The initial state when a PR is opened. Note that the draft state refers to the RFC and not the PR (it should be submitted as a normal PR). The community and relevant steering committee(s) provide feedback.
+- **Final Comment Period (FCP)**: Once there is rough consensus, an FCP of **7–10** weekdays starts. During this time, final objections can be raised.
 - **Merged**: After FCP with no blocking concerns, the RFC is merged and becomes official.
 - **Postponed**: RFCs may be deferred due to lack of clarity, priority, or readiness.
 - **Rejected**: With strong reasoning and community consensus, RFCs can be declined.
@@ -62,7 +62,7 @@ Each RFC goes through these stages:
 
 Once accepted:
 
-- The implementation is tracked through linked issues or repositories.
+- The implementation is tracked through linked GitHub work items or repositories as relevant.
 - Any changes during implementation that deviate from the RFC must go through a **follow-up RFC** or an **amendment** process.
 - An RFC can be **revised** in-place via a new RFC that supersedes or modifies the previous one.
 
