@@ -6,6 +6,7 @@ license. This RFC proposes to change the license to the [Apache License 2.0](htt
 ## Change Log
 
 - 2025-07-30: Initial RFC created
+- 2025-08-01: Fix typos
 
 ## Motivation
 
@@ -22,7 +23,7 @@ or the [Apache License 2.0](https://spdx.org/licenses/Apache-2.0.html) as their 
 license and the Apache License (Version 2.0), with portions covered by various BSD-like licenses.
 
 While the BSD-2-Clause-Patent license does meet the licensing requirements of Patina, it is not as widely used in
-Rust projects as MIT and Apache License 2.0. To motivation for this RFC is to transition to a license that satisfies
+Rust projects as MIT and Apache License 2.0. The motivation for this RFC is to transition to a license that satisfies
 the requirements of Patina while also being more widely recognized and used in the Rust ecosystem.
 
 ## Technology Background
@@ -99,7 +100,7 @@ how it has handled patents in the past per the details in [License-History.txt](
                   TianoCore Contribution Agreement 1.0 (covered source files)
 - After August 3, 2017
   - License: [BSD-2-Clause](https://opensource.org/licenses/BSD-2-Clause)
-  - Patent Grant: The TianoCore Contribution Agreement 1.1 was introduced to cover source files in adition to
+  - Patent Grant: The TianoCore Contribution Agreement 1.1 was introduced to cover source files in addition to
                   documentation files in source and compiled form.
 - After April 9, 2019
   - License: [BSD-2-Clause-Patent](https://spdx.org/licenses/BSD-2-Clause-Patent.html)
