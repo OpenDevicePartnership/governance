@@ -47,8 +47,8 @@ In order to be eligible to be a Organization project, a project must:
 * Be approved by the Steering Committee using the established [RFC Process](./rfc/README.md)
 * Agree to follow the guidance and direction of the Steering Committee.
 * Use only the following outbound licenses or agreements unless otherwise approved:
-  - For code, [MIT License](https://opensource.org/license/mit) or [BSD-2-Clause-Patent License](https://opensource.org/license/bsdpluspatent)
-  - For data, [MIT License](https://opensource.org/license/mit)
+  - For code, [MIT License](https://opensource.org/license/mit) or [Apache 2.0 License](https://opensource.org/license/apache-2-0)
+  - For data, [MIT License](https://opensource.org/license/mit) or [Apache 2.0 License](https://opensource.org/license/apache-2-0)
   - If you would like to make use of another license, please first inquire via the ODP [Zulip Server](https://opendevicepartnership.zulipchat.com/)
   - For specifications, a community developed and maintained specification agreement, such the [Open Web Foundation Agreements](https://www.openwebfoundation.org/the-agreements) or [Community Specification Agreement](https://github.com/CommunitySpecification/1.0)
 * Include and adhere to the Organization's policies, including the [trademark policy](./TRADEMARKS.md), the [antitrust policy](./ANTITRUST.md), and the [code of conduct](./CODE-OF-CONDUCT.md)
