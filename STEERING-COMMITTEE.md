@@ -5,7 +5,7 @@ This document lists the members of the Open Device Partnership's organization-le
 | **NAME** | **Handle** | **Affiliated Organization** | **Role** |
 | --- | --- | --- | --- |
 | Jerry Xie | jerrysxie | Microsoft | ODP Chair |
-| Michael Kubacki | makubacki | Microsoft | Patina Project Chair |
+| [Michael Kubacki](steering-committee-applications/michael-kubacki.md) | [makubacki](https://github.com/makubacki) | [Microsoft](https://www.microsoft.com/) | [Patina](https://github.com/OpenDevicePartnership/patina) Chair |
 | ... | ... | ... | ... |
 
 ---
