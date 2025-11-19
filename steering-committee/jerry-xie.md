@@ -28,7 +28,7 @@ Jerry envisions ODP EC becoming the default Rust-based EC firmware architecture.
 
 ### Organizational Impact
 
-Jerry aims to formalize ODP integration across Microsoft's platform firmware stack with a focus on establishing a secure EC baseline implementation that can serve as the root of trust for a Windows system. He hopes to accelerate partners' adoption of ODP EC services and advocate for inbox support for ODP EC services from the Windows OS team. He actively pushes for adoption of memory safe language like Rust within Microsoft through tech forums and guides.
+Jerry aims to formalize ODP integration across Microsoft's platform firmware stack with a focus on establishing a secure EC baseline implementation that can serve as the root of trust for a Windows system. He hopes to accelerate partners' adoption of ODP EC services and advocate for inbox support for ODP EC services from the Windows OS team. He actively pushes for adoption of memory-safe language like Rust within Microsoft through tech forums and guides.
     
 ## Commitments & Outcomes
 
