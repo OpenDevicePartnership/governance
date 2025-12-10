@@ -5,11 +5,19 @@
 
 ## Steering Committee Application
 
-**Name • Title • Organization**
+<img src="portrait_placeholder.png" alt="Portrait" style="width: 150px; height: 150px; border-radius: 75px; display: block; margin: 0 auto;">
+
+<div style="text-align: center;">
+
+### Name • Title • Organization
+
 **Contact (email / GitHub alias / LinkedIn)**
+
 **Proposed term** (e.g., Jan–Dec 2026)
-**Primary focus area(s)** (e.g., Patina, Secure EC firmware, OS-EC service interface, supply chain security,
-documentation & training, governance, partner engagement)
+
+**Primary focus area(s)** (e.g., Patina, Secure EC firmware, OS-EC service interface, supply chain security, documentation & training, governance, partner engagement)
+
+</div>
 
 ---
 
