@@ -1,9 +1,20 @@
-# EC Project Lead: Jerry Xie
+# Open Device Partnership (ODP)
 
-**JerryXie • Principal Software Engineer • Microsoft**  
-**Contact:** <jerryxie@microsoft.com> (email) / jerrysxie (GitHub)  
-**Proposed Term:** Jan–Dec 2026  
+## Steering Committee Application
+
+<img src="jerry-xie.jpg" alt="Portrait" style="width: 150px; height: 150px; border-radius: 75px; display: block; margin: 0 auto;">
+
+<div style="text-align: center;">
+
+### Jerry Xie • Principal Software Engineer • Microsoft
+
+**`jerryxie@microsoft.com` / [GitHub](https://github.com/jerrysxie) / [LinkedIn](https://www.linkedin.com/in/jerry-sxie/)**
+
+**Proposed Term:** Jan 2026 – Dec 2026
+
 **Primary Focus Area:** Secure EC Firmware  
+
+</div>
 
 ---
 
