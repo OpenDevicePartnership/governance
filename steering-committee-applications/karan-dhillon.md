@@ -47,7 +47,7 @@ Karan envisions ODP will enable OEMs to deliver secure devices with exceptional 
 These are the key outcomes I plan to focus on during this term:
 
 - **ODP Governance**
-  - Organization of the ODP steering committe: once a month steering committee meetings with clear agendas and outcome tracking.
+  - Organization of the ODP steering committee: once a month steering committee meetings with clear agendas and outcome tracking.
     Success = Monthly meetings of the steering committee with agendas published in advance and tracked outcomes.
 - **Minimal Firmware**
   - Work with various stake holders to identify attack surface reduction strategy for Patina Firmware.
