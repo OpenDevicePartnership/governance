@@ -12,7 +12,7 @@
 
 **Proposed Term:** Jan 2026 – Dec 2026
 
-**Primary focus area(s)** ODP Governance & Patina (UEFI firmware)
+**Primary Focus Area(s):** ODP Governance & Patina (UEFI firmware)
 
 </div>
 
