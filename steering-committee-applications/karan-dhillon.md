@@ -10,7 +10,7 @@
 
 **`karand@microsoft.com` / [dhillonk (GitHub)](https://github.com/dhillonk) / [linkedin.com/in/kadhillon](https://www.linkedin.com/in/kadhillon/)**
 
-**Proposed term** Jan 2026 – Dec 2026
+**Proposed Term:** Jan 2026 – Dec 2026
 
 **Primary focus area(s)** ODP Governance & Patina (UEFI firmware)
 
