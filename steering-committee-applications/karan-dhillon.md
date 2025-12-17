@@ -50,7 +50,7 @@ These are the key outcomes I plan to focus on during this term:
   - Organization of the ODP steering committee: once a month steering committee meetings with clear agendas and outcome tracking.
     Success = Monthly meetings of the steering committee with agendas published in advance and tracked outcomes.
 - **Minimal Firmware**
-  - Work with various stake holders to identify attack surface reduction strategy for Patina Firmware.
+  - Work with various stakeholders to identify attack surface reduction strategy for Patina Firmware.
     Success = A specification for delivering customer scenarios from a high level OS which are currently delivered from UEFI Firmware.
 - **Broaden ODP Adoption**
   - Onboard more OEMs, IHVs and silicon providers into the ODP alliance.
