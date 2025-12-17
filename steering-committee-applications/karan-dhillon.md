@@ -22,7 +22,7 @@
 
 Karan Dhillon is a Principal Product Manager in Microsoft's Windows System Silicon Integration (WSSI) team, where he leads the Open Device Partnership (ODP). With over 8 years of experience in devices teams at Microsoft and another 5 years in the device management, space Karan brings a commitment to building secure, reliable and manageable devices.
 
-As a Product Manager, Karan has a track recored of successfully delivering  projects with complex cross-organizational dependencies.
+As a Product Manager, Karan has a track record of successfully delivering  projects with complex cross-organizational dependencies.
 
 ## Value Added to ODP
 
