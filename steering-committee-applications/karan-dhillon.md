@@ -32,7 +32,7 @@ As a Product Manager, Karan has a track record of successfully delivering  proje
 
 ## Strategic Impact & Vision for ODP
 
-Karan's contributions have been instrumental in the establishment of ODP alliance.
+Karan's contributions have been instrumental in the establishment of the ODP alliance.
 
 Key contributions to date:
 
