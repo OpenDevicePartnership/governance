@@ -29,7 +29,7 @@ An organization-wide policy is needed to:
 
 ## Technology Background
 
-AI coding assistants generally fall into two categories:
+As of today, AI coding assistants generally fall into two categories:
 
 1. **Inline code completion tools** (e.g., GitHub Copilot, Codeium): These integrate into an editor and suggest
    code completions as the developer types. The developer selects, modifies, or rejects suggestions.
@@ -78,11 +78,14 @@ Key concerns with AI-generated code include:
 - Should ODP adopt a specific attribution format for AI-assisted contributions (e.g., the Linux kernel's
   `Assisted-by:` commit trailer)? If so, what information should be included (tool name, model version,
   specialized analysis tools)?
-- Should there be different tiers of policy strictness depending on the nature of the repository (e.g., firmware
-  vs. documentation vs. tooling)?
+- ~~Should there be different tiers of policy strictness depending on the nature of the repository (e.g., firmware
+  vs. documentation vs. tooling)?~~ **Resolved**: The policy uses a single baseline with project-specific
+  extensions (see Proposed Policy §5). Individual projects may adopt stricter requirements but not weaker ones.
 - How should this policy apply to AI-generated documentation, test cases, and non-code artifacts?
-- Should there be a mechanism for contributors to self-certify compliance with this policy (e.g., a checkbox in
-  PR templates)?
+- ~~Should there be a mechanism for contributors to self-certify compliance with this policy (e.g., a checkbox in
+  PR templates)?~~ **Resolved**: No. Policy compliance is already expected of all contributors, consistent with
+  how the Code of Conduct and security policy are handled. A checkbox adds no enforcement value.
+
 - How should this policy interact with existing project-level AI policies such as
   [Patina's AI policy](https://github.com/OpenDevicePartnership/patina/blob/main/CONTRIBUTING.md#ai-policy)?
   Should Patina's policy be updated to reference this org-wide policy as its baseline?
@@ -167,7 +170,7 @@ By submitting a contribution, the contributor certifies that:
 AI-assisted contributions must meet the same quality bar as human-authored contributions:
 
 - Code must be thoroughly reviewed by the contributor before submission.
-- Code must be tested according to the project's testing requirements.
+- Code must be tested according to the project's testing requirements including device testing requirements where applicable.
 - Contributors should not rely on AI tools as a substitute for understanding the codebase or the problem domain.
 
 ### 4. Enforcement
