@@ -77,7 +77,9 @@ Key concerns with AI-generated code include:
 
 - Should ODP adopt a specific attribution format for AI-assisted contributions (e.g., the Linux kernel's
   `Assisted-by:` commit trailer)? If so, what information should be included (tool name, model version,
-  specialized analysis tools)?
+  specialized analysis tools)? **Resolved**: ODP will adopt a standard `Assisted-by:` commit trailer
+  similar to the Linux kernel, where contributors are expected to indicate the AI tool(s) used, including
+  model version and any specialized analysis tools that contributed to the generated code. (e.g., `Assisted-by: Claude:claude-3-opus coccinelle sparse`)
 - ~~Should there be different tiers of policy strictness depending on the nature of the repository (e.g., firmware
   vs. documentation vs. tooling)?~~ **Resolved**: The policy uses a single baseline with project-specific
   extensions (see Proposed Policy §5). Individual projects may adopt stricter requirements but not weaker ones.
@@ -125,6 +127,25 @@ The Linux kernel policy is notable for its pragmatic approach—it does not ban 
 responsibility on the human submitter and requires transparent attribution. The kernel maintains this policy as a
 standalone document within its process documentation, separate from the general contribution guide but referenced
 by it.
+
+### Linux Foundation Generative AI Guidance
+
+The [Linux Foundation](https://www.linuxfoundation.org/legal/generative-ai) has published organization-wide
+guidance on the use of generative AI tools for open source development. Key points include:
+
+1. **Contractual compatibility**: Contributors must ensure that the terms of their AI tool do not place
+   restrictions on the tool's output that are inconsistent with the project's open source license, IP policies,
+   or the Open Source Definition.
+2. **Third-party copyrighted materials**: If the AI tool's output includes pre-existing copyrighted materials
+   (including open source code) authored by third parties, the contributor must confirm they have permission
+   (e.g., a compatible open source license or public domain declaration) to use, modify, and contribute those
+   materials, and must provide appropriate notice and attribution.
+3. **Project-specific policies**: Individual Linux Foundation projects may develop their own stricter guidance,
+   and contributors must also comply with any employer-specific policies.
+
+The Linux Foundation guidance is notable for explicitly allowing AI-generated contributions while placing the
+burden on contributors to verify licensing compatibility and third-party IP compliance. It treats AI-generated
+code the same as any other contribution in terms of technical merit and peer review.
 
 ## Alternatives
 
