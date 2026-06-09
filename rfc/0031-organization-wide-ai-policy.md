@@ -29,7 +29,7 @@ An organization-wide policy is needed to:
 
 ## Technology Background
 
-As of today, AI coding assistants generally fall into two categories:
+As of today, AI coding assistants generally fall into three categories:
 
 1. **Inline code completion tools** (e.g., GitHub Copilot, Codeium): These integrate into an editor and suggest
    code completions as the developer types. The developer selects, modifies, or rejects suggestions.
@@ -37,6 +37,11 @@ As of today, AI coding assistants generally fall into two categories:
 2. **Conversational AI tools** (e.g., ChatGPT, Claude, Gemini): These generate code, documentation, or
    explanations in response to natural language prompts. Output is typically copied into the codebase by the
    developer.
+
+3. **Agentic coding tools** (e.g., Claude Code, GitHub Copilot agent mode, Codex CLI): These tools operate
+   with greater autonomy — they can read and write files, run terminal commands, execute tests, and iterate
+   on code across multiple steps with minimal human intervention. The developer typically provides a
+   high-level goal, and the agent determines and executes the implementation steps.
 
 Key concerns with AI-generated code include:
 
@@ -46,6 +51,8 @@ Key concerns with AI-generated code include:
   safety-critical, low-level, or domain-specific contexts such as firmware development.
 - **Accountability**: When AI generates code, it can be unclear who is responsible for reviewing, testing, and
   maintaining it. The contributor who submits the code must bear this responsibility.
+- **Scope of changes**: Agentic tools can make broad, multi-file changes autonomously, increasing the risk
+  that a contributor submits code they have not fully reviewed or understood.
 
 ## Goals
 
@@ -66,7 +73,8 @@ Key concerns with AI-generated code include:
 3. **Quality standards**: AI-assisted contributions must meet the same quality, testing, and review standards as
    fully human-authored contributions.
 4. **No direct AI submissions**: ODP does not accept contributions submitted directly by AI tools without
-   substantive human involvement. Automated pull requests generated entirely by AI agents without human review are
+   substantive human involvement. This includes pull requests opened or commits pushed by agentic coding tools
+   without thorough human review of every change. Automated pull requests generated entirely by AI agents are
    not permitted.
 5. **Enforcement**: Maintainers reserve the right to reject contributions that violate this policy. Repeated
    violations may result in temporary or permanent restrictions on the contributor.
@@ -175,6 +183,9 @@ contributor who takes full responsibility for the submission. Specifically, the 
 - Fully understand the changes being made and be able to explain them to other contributors and maintainers.
 - Ensure the contribution meets the project's coding standards, contribution guidelines, and review expectations.
 - Take responsibility for maintaining the contributed code.
+- Review all changes produced by AI tools before submission, including those made autonomously by agentic
+  coding tools. The use of autonomous agents does not reduce the contributor's obligation to understand and
+  verify every change.
 
 ### 2. Legal and Licensing Compliance
 
