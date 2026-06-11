@@ -11,6 +11,7 @@ ODP intends to enable Secure EC services to run on Zephyr through a staged inter
 ## Change Log
 
 - 2026-06-08: Initial RFC created
+- 2026-06-11: Clarified platform support scope, safety caveats, and phasing based on review feedback
 
 ## Motivation
 
@@ -34,10 +35,10 @@ This creates a clear opportunity:
 - **Zephyr Rust Support:** Zephyr has [official Rust language support](https://docs.zephyrproject.org/latest/develop/languages/rust/index.html) via the [`zephyr-lang-rust`](https://github.com/zephyrproject-rtos/zephyr-lang-rust) optional module. Key characteristics of the current support:
   - Enabled via `CONFIG_RUST` in application configuration
   - Applications are built with Cargo and linked as a static library (`crate-type = ["staticlib"]`)
-  - A `zephyr` crate provides bindings to Zephyr APIs, though bindings are described as "under development" and "currently rather minimalistic"
+  - A `zephyr` crate provides thin FFI bindings to Zephyr APIs, though bindings are described as "under development" and "currently rather minimalistic." Safe, ergonomic Rust wrappers around drivers are [largely missing](https://github.com/zephyrproject-rtos/zephyr-lang-rust/issues/73) — application code must currently use `unsafe` calls to the FFI layer directly
   - Devicetree bindings are available via `dt-rust.yaml` with traits augmenting device representations
   - Bool, numeric, and string Kconfig settings are accessible from Rust via `zephyr::kconfig`
-  - Only a limited set of platforms are currently supported (e.g., `qemu_cortex_m0`, `qemu_cortex_m3`, `qemu_riscv32`, `qemu_riscv64`, `m2gl025_miv`, `frdm_mcxa156`, `esp32c3_supermini`, `nrf5340dk`)
+  - Only a limited set of platforms are [CI-tested](https://github.com/zephyrproject-rtos/zephyr-lang-rust/blob/main/etc/platforms.txt) (e.g., `qemu_cortex_m0`, `qemu_cortex_m3`, `qemu_riscv32`, `qemu_riscv64`, `m2gl025_miv`, `frdm_mcxa156`, `esp32c3_supermini`, `nrf5340dk`). However, the underlying [Kconfig gate](https://github.com/zephyrproject-rtos/zephyr-lang-rust/blob/main/Kconfig) checks architecture support (`CPU_CORTEX_M`, `RISCV`, `ARCH_POSIX && 64BIT`), meaning any board on a supported architecture can work with appropriate overlay files — as demonstrated by ODP PoCs running on IMXRT
   - Applications must use `no_std` and export a `rust_main` entry point called from C
 - **Embassy:** A Rust async runtime for embedded systems used as the foundation of ODP's Secure EC architecture.
 - **ODP Secure EC:** A Rust-first modular EC service architecture focused on memory safety, secure boot, and composable firmware services.
@@ -73,7 +74,7 @@ This RFC does **not**:
 ## Requirements
 
 1. ODP Secure EC services must be executable on Zephyr-based platforms without requiring a full stack replacement.
-2. Interoperability layers must not compromise memory safety guarantees of the Rust service code.
+2. Interoperability layers must preserve memory safety guarantees of the Rust service code. Where a Zephyr subsystem's internal design makes fully safe wrapping impractical, the boundary must be explicitly documented and the unsafe surface minimized.
 3. The approach must support incremental adoption — OEMs should not need to migrate all components at once.
 4. Integration must work with existing Zephyr drivers via FFI or wrapper layers.
 5. The architecture must remain compatible with Embassy-native deployments.
@@ -85,6 +86,8 @@ This RFC does **not**:
 - How should temporary forks or patches be managed?
 - What metrics (RAM, flash, performance) should be published?
 - What belongs upstream vs ODP-specific?
+- Which Zephyr subsystems can be wrapped safely, and which may require accepting a bounded unsafe surface?
+- What is the threshold for accepting an interop layer that cannot fully guarantee safety?
 
 ## Prior Art
 
@@ -104,7 +107,7 @@ This RFC does **not**:
 ### Alternative 2: Rust Drivers Only
 
 - Pros: Incremental and upstream-friendly
-- Cons: Does not enable reuse of ODP services
+- Cons: Does not enable reuse of ODP services; requires changes to the Zephyr kernel itself, which is a harder upstream sell than improving the `zephyr-lang-rust` module (though Linux has set a precedent for accepting Rust drivers while the core kernel remains C)
 
 ### Alternative 3: Services on C Drivers Only
 
@@ -124,6 +127,7 @@ The chosen design supports both service-level and driver-level integration paths
 - Additional maintenance (wrappers, integration layers)
 - Potential confusion about "primary" architecture
 - Dependency on evolving upstream Rust support in Zephyr
+- Some Zephyr subsystems may be inherently difficult to wrap safely without upstream redesign, potentially requiring bounded unsafe interop layers
 
 ## Rust Code Design
 
@@ -138,8 +142,15 @@ The chosen design supports both service-level and driver-level integration paths
 ### Phase 1: ODP on Zephyr
 
 - Execute ODP Rust services within Zephyr runtime
-- Bridge to Zephyr drivers using FFI wrapper layers
+- Bridge to Zephyr drivers using the existing thin FFI bindings from `zephyr-lang-rust`
 - Validate functionality on real hardware platforms
+
+### Phase 1.5: Safe Driver Libraries
+
+- Build safe, ergonomic Rust libraries around the existing thin FFI wrappers provided by `zephyr-lang-rust`
+- Eliminate the need for application code to make direct `unsafe` FFI calls to Zephyr drivers
+- Prioritize driver abstractions needed by target Secure EC services (e.g., I2C, GPIO, sensor subsystems)
+- Contribute safe wrapper libraries upstream where appropriate
 
 ### Phase 2: Rust Driver Enablement
 
@@ -148,6 +159,7 @@ The chosen design supports both service-level and driver-level integration paths
   - Device abstraction layers
   - Devicetree integration
   - FFI tooling and ergonomics
+- Note: This phase requires changes closer to the Zephyr kernel, which carries a higher upstream acceptance bar than `zephyr-lang-rust` module improvements
 
 ### Long-term Direction
 
@@ -163,8 +175,8 @@ ODP will support a **hybrid integration model**:
 ### Path A — Rust Services on Zephyr
 
 - Run ODP Rust services on top of Zephyr
-- Reuse existing Zephyr drivers (C-based initially)
-- Use thin abstraction layers / FFI where necessary
+- Reuse existing Zephyr drivers (C-based initially) through the thin FFI bindings already provided by `zephyr-lang-rust`
+- Build safe, ergonomic Rust libraries around these FFI bindings so that application code does not require direct `unsafe` calls
 
 ### Path B — Rust Drivers in Zephyr
 
@@ -174,6 +186,7 @@ ODP will support a **hybrid integration model**:
 
 ### Staged Approach
 
-- **Phase 1:** ODP services running on Zephyr with minimal changes
-- **Phase 2:** Incremental introduction of Rust drivers and deeper integration
+- **Phase 1:** ODP services running on Zephyr via existing thin FFI bindings
+- **Phase 1.5:** Safe, ergonomic Rust driver libraries replacing direct unsafe FFI usage
+- **Phase 2:** Incremental introduction of Rust-native drivers and deeper kernel integration
 - **Long-term:** Portable Rust EC services across Embassy and Zephyr environments
