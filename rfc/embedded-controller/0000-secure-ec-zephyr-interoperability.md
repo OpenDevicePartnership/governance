@@ -93,8 +93,8 @@ This RFC does **not**:
 
 - Zephyr Rust effort (Linaro / community initiative)
 - ODP internal PoCs:
-  - Rust services running on Zephyr
-  - Rust driver experiments via thin abstraction layers
+  - Rust services running on Zephyr (see [Secure EC PoC](https://github.com/OpenDevicePartnership/zephyr-lang-rust/tree/secure-ec-poc))
+  - Rust driver experiments via thin abstraction layers (see [Rust Driver PoC](https://github.com/OpenDevicePartnership/zephyr-lang-rust/tree/rust-driver-poc))
 - ODP "Journey to Zephyr" architectural exploration
 
 ## Alternatives
