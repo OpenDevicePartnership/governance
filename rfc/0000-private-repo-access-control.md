@@ -98,6 +98,96 @@ The following questions should be resolved during RFC review:
 
 1. Should private repositories containing partner IP have a maximum retention period (for example, 12 or 24 months), after which the repository must be deleted or transferred out of the ODP organization?
 
+2. **Repeatable access audit record format**: Should each private repository be required to maintain a structured `ACCESS-AUDIT.md` file committed directly to the repository as the canonical audit record? A proposed format would include:
+   - A table of authorized teams and their permission levels, with grant date and justification.
+   - A table of any individual (direct collaborator) grants with justification and optional expiry date.
+   - An audit history table with one row per completed 6-month review, recording the review date, the auditor (GitHub username), a summary of changes made, and a sign-off.
+
+   Example `ACCESS-AUDIT.md` structure:
+
+   ```markdown
+   # Access Audit Log
+
+   ## Authorized Access
+
+   ### Teams
+
+   | Team | Permission Level | Granted Date | Justification |
+   |------|-----------------|--------------|---------------|
+   | @OpenDevicePartnership/team-name | Write | YYYY-MM-DD | Reason |
+
+   ### Individual Grants (exceptions — require justification)
+
+   | GitHub Username | Permission Level | Granted Date | Justification | Expiry |
+   |----------------|-----------------|--------------|---------------|--------|
+   | @username | Read | YYYY-MM-DD | Reason | YYYY-MM-DD or N/A |
+
+   ## Audit History
+
+   | Review Date | Auditor | Changes Made | Sign-off |
+   |-------------|---------|--------------|----------|
+   | YYYY-MM-DD | @username | None / Removed @user, added @team | @username YYYY-MM-DD |
+   ```
+
+   An automated GitHub Actions workflow would run on a schedule every 6 months, check whether `ACCESS-AUDIT.md` has been updated within the required period, and if overdue, open a GitHub issue in the repository and assign it to the repository owner to prompt the audit review.
+
+   Example workflow:
+
+   ```yaml
+   name: Access Audit Reminder
+
+   on:
+     schedule:
+       - cron: '0 9 1 */6 *'  # 9am UTC on the 1st of every 6th month
+     workflow_dispatch:
+
+   permissions:
+     issues: write
+     contents: read
+
+   jobs:
+     check-audit:
+       runs-on: ubuntu-latest
+       steps:
+         - uses: actions/checkout@v4
+
+         - name: Check ACCESS-AUDIT.md last updated date
+           id: check
+           run: |
+             if [ ! -f ACCESS-AUDIT.md ]; then
+               echo "missing=true" >> "$GITHUB_OUTPUT"
+             else
+               LAST=$(git log -1 --format="%ct" -- ACCESS-AUDIT.md)
+               NOW=$(date +%s)
+               DAYS=$(( (NOW - LAST) / 86400 ))
+               if [ "$DAYS" -gt 183 ]; then
+                 echo "overdue=true" >> "$GITHUB_OUTPUT"
+                 echo "days=$DAYS" >> "$GITHUB_OUTPUT"
+               fi
+             fi
+
+         - name: Get repo owner
+           id: owner
+           if: steps.check.outputs.overdue == 'true' || steps.check.outputs.missing == 'true'
+           run: |
+             OWNER=$(gh api repos/${{ github.repository }} --jq '.owner.login')
+             echo "login=$OWNER" >> "$GITHUB_OUTPUT"
+           env:
+             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+         - name: Create audit issue
+           if: steps.check.outputs.overdue == 'true' || steps.check.outputs.missing == 'true'
+           run: |
+             BODY="This repository's access audit is overdue.\n\nPer the ODP private repository access control policy, \`ACCESS-AUDIT.md\` must be reviewed and updated every 6 months.\n\nPlease:\n1. Review the current team and individual access grants.\n2. Remove any stale or unnecessary access.\n3. Add a new row to the Audit History table in \`ACCESS-AUDIT.md\` with today's date and your sign-off.\n4. Commit and push the updated file to close this issue."
+             gh issue create \
+               --title "Access audit required: ACCESS-AUDIT.md is overdue" \
+               --body "$(printf "$BODY")" \
+               --assignee "${{ steps.owner.outputs.login }}" \
+               --label "access-audit"
+           env:
+             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+   ```
+
 ## Prior Art
 
 Common open-source governance practice distinguishes between broadly collaborative repositories and repositories intended for limited visibility. ODP already uses governance documentation and an RFC process to formalize organization-level policy decisions. This proposal extends that governance style to repository access control by making the default behavior for private repositories explicit and predictable.
