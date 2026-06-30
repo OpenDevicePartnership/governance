@@ -1,0 +1,59 @@
+name: Create Meeting Agenda
+
+# Creates the next ODP Steering Committee meeting agenda. This workflow only
+# runs a script and opens a pull request when a new agenda is produced.
+
+on:
+  schedule:
+    # Nightly at 07:00 UTC.
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  create-agenda:
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'OpenDevicePartnership'
+    steps:
+      - name: Check Out Repository
+        uses: actions/checkout@v6
+
+      - name: Set Up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+
+      - name: Install Dependencies
+        run: pip install -r steering-committee-meetings/scripts/requirements.txt
+
+      - name: Generate Agenda If Due
+        id: agenda
+        # A manual dispatch skips the post-meeting lead-time wait.
+        run: >-
+          python steering-committee-meetings/scripts/generate_agenda.py
+          --if-due
+          ${{ github.event_name == 'workflow_dispatch' && '--ignore-lead-time' || '' }}
+
+      - name: Generate Token
+        id: app-token
+        uses: actions/create-github-app-token@v3
+        with:
+          app-id: ${{ secrets.ODP_CI_APPLICATION_ID }}
+          private-key: ${{ secrets.ODP_CI_APPLICATION_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+
+      - name: Open Pull Request for New Agenda
+        if: steps.agenda.outputs.created == 'true'
+        uses: peter-evans/create-pull-request@v8
+        with:
+          branch: agenda/${{ steps.agenda.outputs.meeting_date }}
+          title: "Add agenda for ODP Steering Committee meeting on ${{ steps.agenda.outputs.meeting_date }}"
+          body: |
+            Automated agenda for the ODP Steering Committee meeting on
+            ${{ steps.agenda.outputs.meeting_date }}.
+          commit-message: "Add agenda for meeting on ${{ steps.agenda.outputs.meeting_date }}"
+          assignees: ${{ steps.agenda.outputs.chair_github }}
+          team-reviewers: odp-steering-committee
+          token: ${{ steps.app-token.outputs.token }}

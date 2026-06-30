@@ -1,0 +1,9 @@
+# Dependencies for the agenda generation script.
+# Install from the repository root with:
+#   py -3 -m pip install -r steering-committee-meetings/scripts/requirements.txt
+
+# Locale-aware formatting of spelled-out timezone names.
+babel
+
+# IANA timezone database for zoneinfo. Required on Windows, no-op on Unix.
+tzdata

@@ -1,0 +1,29 @@
+# Open Device Partnership (ODP) Steering Committee meeting configuration.
+
+[meeting]
+# Meeting start and end times in 24-hour HH:MM format.
+# They are rendered in the agenda with am/pm (for example "9:00 AM").
+time_start = "09:00"
+time_end = "10:00"
+
+# IANA timezone name (see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+# The agenda spells this out for the meeting date, including daylight saving
+# (for example "America/Los_Angeles" renders as "Pacific Daylight Time" in
+# summer and "Pacific Standard Time" in winter).
+timezone = "America/Los_Angeles"
+
+# The default meeting chair. Update this when the chair role rotates.
+chair_name = "Karan Dhillon"
+chair_github = "dhillonk"
+
+# Where the meeting takes place, or the link participants use to join.
+location = "https://teams.microsoft.com/meet/253907517636673?p=2yg2pES56LxzyL1HDg"
+
+[recurrence]
+# The meeting recurs on the Nth weekday of every month. The script computes the
+# next occurrence on or after today (override with --month or --date).
+#
+#   ordinal: first | second | third | fourth | fifth | last
+#   weekday: Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday
+ordinal = "first"
+weekday = "Thursday"
