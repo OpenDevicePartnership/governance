@@ -1,28 +1,37 @@
 # RFC: Documentation Philosophy for ODP Projects
 
-This RFC proposes that Open Device Partnership (ODP) standardize on **co-located
-project documentation**: each project owns its documentation inside the same
-repository as its source code, published as an [mdBook][mdbook] site via
-GitHub Pages. The existing `documentation` repository continues to exist, but
-its role narrows to hosting **organization-level** content (charter,
-governance, cross-project standards, the RFC index) and to acting as a landing
-page that links out to each project's mdBook.
+This RFC proposes that Open Device Partnership (ODP) adopt a documentation
+philosophy built on two principles:
+
+1. **No project-specific documentation lives in the `documentation`
+   repository.**
+2. **Each ODP project has its own project-level [mdBook][mdbook]**, owned
+   and maintained by that project and published via GitHub Pages.
+
+The `documentation` repository continues to exist, but its role narrows to
+hosting **organization-level** content (charter, governance, cross-project
+standards, the RFC index) and to acting as a landing page that links out to
+each project's mdBook.
 
 ## Change Log
 
 - 2026-07-21: Initial RFC draft created.
+- 2026-07-27: Reframed the RFC around two explicit principles ("no
+  project-specific docs in the documentation repo" and "each ODP project
+  has a project-level mdBook") rather than a comparison between two
+  existing approaches.
 
 ## Motivation
 
-ODP projects today use two inconsistent approaches to documentation:
+ODP projects today handle documentation inconsistently. Some projects, such
+as Secure EC and Standardized EC Services, keep their documentation in the
+shared `documentation` repository. Others, such as Patina, keep their
+documentation with the project as a project-level mdBook. The two
+principles proposed by this RFC resolve that inconsistency directly:
+project-specific content leaves the `documentation` repository, and every
+project stands up its own mdBook.
 
-1. **Centralized.** Projects such as Secure EC and Standardized EC Services
-   keep their documentation in the shared `documentation` repository,
-   separate from the code it describes.
-2. **Co-located.** Patina keeps its documentation inside the Patina
-   repository, next to the code, published as an mdBook.
-
-Having two models causes real friction:
+Concretely, the current split causes real friction:
 
 - **Drift between code and docs.** When docs live in a different repository
   than the code, changes to behavior, APIs, or configuration frequently ship
@@ -40,10 +49,11 @@ Having two models causes real friction:
 - **Inconsistent contributor experience.** New contributors have to learn a
   different workflow depending on which ODP project they are working on.
 
-Patina has already validated the co-located mdBook approach in production
-within ODP. Standardizing on it removes the split, aligns ODP with common
-Rust ecosystem practice, and lets each project treat its documentation as a
-first-class part of its codebase.
+Patina has already validated the project-level mdBook approach in
+production within ODP. Elevating that pattern into an explicit
+organization-wide philosophy removes the split, aligns ODP with common
+Rust ecosystem practice, and gives every project a first-class,
+independently owned documentation surface.
 
 ## Technology Background
 
@@ -67,50 +77,56 @@ first-class part of its codebase.
 
 ## Goals
 
-1. Establish a single, consistent documentation model across all ODP
-   projects.
-2. Ensure that project documentation is co-located with the code it
-   describes, so it can be updated atomically with code changes.
+1. Establish a single, consistent documentation philosophy across all ODP
+   projects, expressed as two clear principles:
+   - No project-specific documentation lives in the `documentation`
+     repository.
+   - Every ODP project has its own project-level mdBook.
+2. Give each project a first-class, independently owned documentation
+   surface that can evolve with the project.
 3. Standardize the documentation toolchain on **mdBook + GitHub Pages** so
    contributors, reviewers, and readers have a consistent experience across
    projects.
 4. Preserve a clear home for **organization-level** documentation (charter,
    governance, cross-project standards, the RFC index) that is not
    project-specific.
-5. Migrate existing centralized project documentation (Secure EC,
-   Standardized EC Services) into the corresponding project repositories
-   without loss of content or history where practical.
+5. Migrate existing project-specific documentation currently in the
+   `documentation` repository (Secure EC, Standardized EC Services) into
+   the corresponding project's mdBook without loss of content or history
+   where practical.
 6. Keep the migration cost low and incremental, so projects are not blocked
    on a big-bang cutover.
 
 ## Requirements
 
-1. **Project docs live in the project repo.** Every ODP project repository
-   owns its own documentation under a conventional in-repo path
-   (default: `docs/`).
-2. **mdBook is the required tool.** Project documentation is authored as an
-   mdBook (Markdown + `SUMMARY.md`, built with `mdbook`).
-3. **GitHub Pages publishing.** Each project publishes its rendered mdBook
+1. **No project-specific docs in the `documentation` repository.** The
+   `documentation` repository hosts only organization-level content:
+   charter, governance, cross-project standards and conventions, the RFC
+   index, and a landing page that links out to each project's published
+   mdBook. Project-specific technical documentation does not belong there.
+2. **Every ODP project has a project-level mdBook.** Each project owns and
+   maintains its own mdBook (Markdown + `SUMMARY.md`, built with `mdbook`)
+   covering that project's documentation.
+3. **Project mdBooks live in the project's repository** under a
+   conventional in-repo path (default: `docs/`), so documentation is
+   owned, reviewed, and versioned alongside the project.
+4. **GitHub Pages publishing.** Each project publishes its rendered mdBook
    via GitHub Pages from the project repository, using a GitHub Actions
    workflow that builds on push to the project's default branch.
-4. **Code and docs ship together.** Changes to behavior, APIs,
-   configuration, or user-visible workflows must update the corresponding
+5. **Code and docs ship together.** Changes to behavior, APIs,
+   configuration, or user-visible workflows update the corresponding
    in-repo documentation in the same PR. CODEOWNERS for the `docs/` path
    should reflect the project's maintainers/subsystem owners.
-5. **The `documentation` repository becomes org-level only.** After
-   migration, the `documentation` repository hosts only organization-level
-   content: charter, governance, cross-project standards and conventions,
-   the RFC index, and a landing page that links out to each project's
-   published mdBook. It does not host project-specific technical
-   documentation.
 6. **Existing centralized docs are migrated.** Documentation currently held
    in the `documentation` repository for Secure EC and Standardized EC
-   Services is moved into those projects' repositories as mdBooks. The
-   original locations in the `documentation` repository are then replaced
-   with short link stubs pointing at the new canonical location.
+   Services is moved into those projects' mdBooks. The original locations
+   in the `documentation` repository are then replaced with short link
+   stubs pointing at the new canonical location, then removed once inbound
+   links have been updated.
 7. **New projects follow this model on day one.** Any new project onboarded
-   under ODP governance stands up its documentation in-repo as an mdBook
-   with a GitHub Pages workflow as part of initial setup.
+   under ODP governance stands up a project-level mdBook with a GitHub
+   Pages workflow as part of initial setup, and does not place
+   project-specific documentation in the `documentation` repository.
 8. **Stable external URLs.** During migration, projects should preserve
    inbound links where reasonable by leaving redirect/link stubs at the
    previous locations in the `documentation` repository.
