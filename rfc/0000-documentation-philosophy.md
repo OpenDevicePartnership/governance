@@ -27,11 +27,9 @@ ODP projects today handle documentation inconsistently. Some projects, such
 as Secure EC and Standardized EC Services, keep their documentation in the
 shared `documentation` repository. Others, such as Patina, keep their
 documentation with the project as a project-level mdBook. The two
-principles proposed by this RFC resolve that inconsistency directly:
-project-specific content leaves the `documentation` repository, and every
-project stands up its own mdBook.
+principles proposed by this RFC resolve that inconsistency.
 
-Concretely, the current split causes real friction:
+The current split causes real friction:
 
 - **Drift between code and docs.** When docs live in a different repository
   than the code, changes to behavior, APIs, or configuration frequently ship
@@ -63,17 +61,6 @@ independently owned documentation surface.
 - **GitHub Pages** publishes static sites directly from a GitHub repository,
   typically via a GitHub Actions workflow that builds the mdBook on push and
   deploys the rendered output.
-- **Current state — `documentation` repository.** The `documentation`
-  repository hosts a mix of organization-level material (charter, governance,
-  process) and project-specific material for Secure EC and Standardized EC
-  Services.
-- **Current state — Patina.** Patina's documentation lives inside the Patina
-  repository and is published as an mdBook site, updated by the same PRs
-  that change the code.
-- **Current state — governance.** This `governance` repository already
-  hosts organization-level content (charter, steering committee, RFCs) and
-  is a natural home for the org-level material the `documentation`
-  repository retains after this change.
 
 ## Goals
 
@@ -106,17 +93,14 @@ independently owned documentation surface.
    mdBook. Project-specific technical documentation does not belong there.
 2. **Every ODP project has a project-level mdBook.** Each project owns and
    maintains its own mdBook (Markdown + `SUMMARY.md`, built with `mdbook`)
-   covering that project's documentation.
+   covering that project's documentation. NOTE: this does not mean that
+   every repository in the organization must have an `mdbook`.
 3. **Project mdBooks live in the project's repository** under a
    conventional in-repo path (default: `docs/`), so documentation is
    owned, reviewed, and versioned alongside the project.
 4. **GitHub Pages publishing.** Each project publishes its rendered mdBook
    via GitHub Pages from the project repository, using a GitHub Actions
    workflow that builds on push to the project's default branch.
-5. **Code and docs ship together.** Changes to behavior, APIs,
-   configuration, or user-visible workflows update the corresponding
-   in-repo documentation in the same PR. CODEOWNERS for the `docs/` path
-   should reflect the project's maintainers/subsystem owners.
 6. **Existing centralized docs are migrated.** Documentation currently held
    in the `documentation` repository for Secure EC and Standardized EC
    Services is moved into those projects' mdBooks. The original locations
@@ -127,9 +111,6 @@ independently owned documentation surface.
    under ODP governance stands up a project-level mdBook with a GitHub
    Pages workflow as part of initial setup, and does not place
    project-specific documentation in the `documentation` repository.
-8. **Stable external URLs.** During migration, projects should preserve
-   inbound links where reasonable by leaving redirect/link stubs at the
-   previous locations in the `documentation` repository.
 
 ## Migration Plan
 
@@ -154,8 +135,6 @@ maintainers:
    in the `documentation` repository with short stubs that link to the new
    canonical location on the project's GitHub Pages site, so existing
    inbound links continue to work.
-5. **Announce.** Note the cutover in the project's usual communication
-   channels so downstream readers and contributors update their bookmarks.
 
 Once all previously centralized project docs have been migrated, the
 `documentation` repository's top-level index/landing page is updated to
