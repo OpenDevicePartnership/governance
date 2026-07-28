@@ -25,7 +25,7 @@ each project's mdBook.
 
 ODP projects today handle documentation inconsistently. Some projects, such
 as Secure EC and Standardized EC Services, keep their documentation in the
-shared `documentation` repository. Others, such as Patina, keep their
+ODP org-level `documentation` repository. Others, such as Patina, keep their
 documentation with the project as a project-level mdBook. The two
 principles proposed by this RFC resolve that inconsistency.
 
