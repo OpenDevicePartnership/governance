@@ -99,7 +99,7 @@ independently owned documentation surface.
    conventional in-repo path (default: `docs/`), so documentation is
    owned, reviewed, and versioned alongside the project.
 4. **GitHub Pages publishing.** Each project publishes its rendered mdBook
-   via GitHub Pages from the project repository, using a GitHub Actions
+   via GitHub Pages from a project repository, using a GitHub Actions
    workflow that builds on push to the project's default branch.
 6. **Existing centralized docs are migrated.** Documentation currently held
    in the `documentation` repository for Secure EC and Standardized EC
