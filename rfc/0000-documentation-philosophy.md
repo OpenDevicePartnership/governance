@@ -16,25 +16,17 @@ each project's mdBook.
 ## Change Log
 
 - 2026-07-21: Initial RFC draft created.
-- 2026-07-27: Reframed the RFC around two explicit principles ("no
-  project-specific docs in the documentation repo" and "each ODP project
-  has a project-level mdBook") rather than a comparison between two
-  existing approaches.
 
 ## Motivation
 
 ODP projects today handle documentation inconsistently. Some projects, such
 as Secure EC and Standardized EC Services, keep their documentation in the
 ODP org-level `documentation` repository. Others, such as Patina, keep their
-documentation with the project as a project-level mdBook. The two
-principles proposed by this RFC resolve that inconsistency.
+documentation in a project specific repository. The two principles proposed
+by this RFC resolve that inconsistency.
 
 The current split causes real friction:
 
-- **Drift between code and docs.** When docs live in a different repository
-  than the code, changes to behavior, APIs, or configuration frequently ship
-  without matching documentation updates, because a code PR cannot atomically
-  update centralized docs.
 - **Discoverability.** Contributors browsing a project repository do not
   reliably find its documentation; they have to know that a separate
   documentation repository exists and how it is organized.
@@ -81,8 +73,6 @@ independently owned documentation surface.
    `documentation` repository (Secure EC, Standardized EC Services) into
    the corresponding project's mdBook without loss of content or history
    where practical.
-6. Keep the migration cost low and incremental, so projects are not blocked
-   on a big-bang cutover.
 
 ## Requirements
 
@@ -111,6 +101,10 @@ independently owned documentation surface.
    under ODP governance stands up a project-level mdBook with a GitHub
    Pages workflow as part of initial setup, and does not place
    project-specific documentation in the `documentation` repository.
+8. **Project owners decide which repository to host the mdBook from.**
+   Projects may have multiple repositories and the specific question of
+   which repository to host the prject level mdBook out of is left up
+   to the project owners.
 
 ## Migration Plan
 
@@ -119,7 +113,7 @@ incrementally. For each project currently documented in the `documentation`
 repository (initially: Secure EC and Standardized EC Services), the owning
 maintainers:
 
-1. **Stand up mdBook in the project repository.**
+1. **Stand up mdBook in a project repository.**
    - Add a `docs/` directory containing `book.toml`, `src/SUMMARY.md`, and
      an initial `src/` tree.
    - Add a GitHub Actions workflow that builds the mdBook and deploys it to
@@ -131,10 +125,6 @@ maintainers:
    to be relative to the new location.
 3. **Publish.** Land the new mdBook, verify the published GitHub Pages
    site, and confirm the `SUMMARY.md` covers the migrated content.
-4. **Cut over the `documentation` repository.** Replace the migrated pages
-   in the `documentation` repository with short stubs that link to the new
-   canonical location on the project's GitHub Pages site, so existing
-   inbound links continue to work.
 
 Once all previously centralized project docs have been migrated, the
 `documentation` repository's top-level index/landing page is updated to
