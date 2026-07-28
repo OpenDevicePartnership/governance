@@ -95,7 +95,7 @@ independently owned documentation surface.
    maintains its own mdBook (Markdown + `SUMMARY.md`, built with `mdbook`)
    covering that project's documentation. NOTE: this does not mean that
    every repository in the organization must have an `mdbook`.
-3. **Project mdBooks live in the project's repository** under a
+3. **Project mdBooks live in an appropriate project repository** under a
    conventional in-repo path (default: `docs/`), so documentation is
    owned, reviewed, and versioned alongside the project.
 4. **GitHub Pages publishing.** Each project publishes its rendered mdBook
