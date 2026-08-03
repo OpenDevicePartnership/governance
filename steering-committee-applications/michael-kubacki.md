@@ -9,7 +9,7 @@
 ### Michael Kubacki • Principal Software Engineer • Microsoft
 
 **`michael.kubacki@microsoft.com` / [makubacki (GitHub)](https://github.com/makubacki) /
-[linkedin.com/in/michaelkubacki](www.linkedin.com/in/michaelkubacki)**
+[linkedin.com/in/michaelkubacki](https://www.linkedin.com/in/michaelkubacki)**
 
 **Proposed term** Jan 2026 – Dec 2026
 

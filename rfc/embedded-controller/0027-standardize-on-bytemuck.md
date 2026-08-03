@@ -13,7 +13,7 @@ provide this functionality.
 ## Motivation
 
 Multiple crates are currently used for this functionality, type-C code, in particular, currently uses `bincode`.
-However, it's no longer maintained on Github, and wasn't ideal for the task. We want to migrate away and standardize on
+However, it's no longer maintained on GitHub, and wasn't ideal for the task. We want to migrate away and standardize on
 a new crate. Using a single crate makes code consistent and reduces binary size.
 
 ## Requirements
@@ -26,7 +26,7 @@ should also be endian-aware.
 - `zerocopy` provides very similar features. The benefits of `bytemuck` is that it has a richer set of traits and
   disallows structs with padding. The latter is significant because padding values are not currently specified in Rust,
   possibly resulting in unspecified bytes ending up in reserved bit ranges.
-- `bincode` is better suited for serialization into its own bespoke format. In many case, custom seralization code is
+- `bincode` is better suited for serialization into its own bespoke format. In many cases, custom serialization code is
   required to produce the desired binary layout. Endianness is supported, but is passed as a configuration option
   instead of being a property of the struct, requiring it to be supplied at every encode/decode call.
 - Serde-compatible crates like `binary_serde` are similar to `bincode` in that they tend to be targeted towards general

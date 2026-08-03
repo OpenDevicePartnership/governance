@@ -1,6 +1,6 @@
 # Open Device Partnership
 
-## Governance Documentation & Request for Commments Process
+## Governance Documentation & Request for Comments Process
 
 The Open Device Partnership (ODP) is an alliance of industry-leading PC ecosystem partners in service of promoting
 secure, standards-guided, reusable, and trusted system software for client devices.
