@@ -71,6 +71,6 @@ For each agenda item, summarize the discussion and the decision made.
 
 ### Action Items
 
-| Action item | Owner | Due date |
-| ----------- | ----- | -------- |
+| Action item | Owner                 | Due date   |
+| ----------- | --------------------- | ---------- |
 | Description | Name (GitHub: @alias) | YYYY-MM-DD |

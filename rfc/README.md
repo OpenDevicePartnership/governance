@@ -1,6 +1,8 @@
 # Open Device Partnership RFC Process
 
-Open Device Partnership (ODP) uses a Request for Comments (RFC) process to propose, discuss, and evolve significant changes to the ODP ecosystem. This includes governance changes, notable technical decisions, alignment with standards, API changes, engineering processes, and other organizational decisions that benefit from broad community input.
+Open Device Partnership (ODP) uses a Request for Comments (RFC) process to propose, discuss, and evolve significant
+changes to the ODP ecosystem. This includes governance changes, notable technical decisions, alignment with standards,
+API changes, engineering processes, and other organizational decisions that benefit from broad community input.
 
 ## Table of Contents
 
@@ -14,7 +16,8 @@ Open Device Partnership (ODP) uses a Request for Comments (RFC) process to propo
 
 ## Opening
 
-Changes to the ODP ecosystem are proposed and discussed via pull requests to the RFC folder of this [Governance repository](https://github.com/opendevicepartnership/governance/).
+Changes to the ODP ecosystem are proposed and discussed via pull requests to the RFC folder of this
+[Governance repository](https://github.com/opendevicepartnership/governance/).
 
 ## When you need to follow this process
 
@@ -27,7 +30,8 @@ You need to submit an RFC if you are proposing:
 - Deprecation of existing features, interfaces, or services
 - Major tooling changes or infrastructure upgrades that impact the community
 
-Small bug fixes, documentation updates, or minor enhancements can be proposed via normal contribution workflows and do not require an RFC.
+Small bug fixes, documentation updates, or minor enhancements can be proposed via normal contribution workflows and do
+not require an RFC.
 
 ## Before creating an RFC
 
@@ -42,8 +46,11 @@ This will help you refine your thinking and build consensus before you invest ef
 
 1. **Fork** the [ODP Governance repository](https://github.com/opendevicepartnership/governance)
 2. **Create a new branch** for your RFC
-3. **Copy** the template from `rfc/0000-template.md` to `rfc/text/0000-my-feature.md` (change "my-feature" to describe the RFC).  Don't assign an RFC number yet; This will be filled in later using the RFC PR number if the RFC is accepted.
-4.  **Fill in** the RFC with the details: RFCs are usually poorly received if they lack clear motivation, show little understanding of the design’s impact, or ignore drawbacks and alternatives.
+3. **Copy** the template from `rfc/0000-template.md` to `rfc/text/0000-my-feature.md` (change "my-feature" to describe
+   the RFC). Don't assign an RFC number yet; This will be filled in later using the RFC PR number if the RFC is
+   accepted.
+4. **Fill in** the RFC with the details: RFCs are usually poorly received if they lack clear motivation, show little
+   understanding of the design’s impact, or ignore drawbacks and alternatives.
 5. Submit a **pull request** (PR) with your RFC
 6. The PR will be discussed, reviewed, and may be iteratively updated
 7. Once there is consensus and approval, the RFC will be **merged** and assigned an official number
@@ -52,8 +59,10 @@ This will help you refine your thinking and build consensus before you invest ef
 
 Each RFC goes through these stages:
 
-- **Draft**: The initial state when a PR is opened. Note that the draft state refers to the RFC and not the PR (it should be submitted as a normal PR). The community and relevant steering committee(s) provide feedback.
-- **Final Comment Period (FCP)**: Once there is rough consensus, an FCP of **7–10** weekdays starts. During this time, final objections can be raised.
+- **Draft**: The initial state when a PR is opened. Note that the draft state refers to the RFC and not the PR (it
+  should be submitted as a normal PR). The community and relevant steering committee(s) provide feedback.
+- **Final Comment Period (FCP)**: Once there is rough consensus, an FCP of **7–10** weekdays starts. During this time,
+  final objections can be raised.
 - **Merged**: After FCP with no blocking concerns, the RFC is merged and becomes official.
 - **Postponed**: RFCs may be deferred due to lack of clarity, priority, or readiness.
 - **Rejected**: With strong reasoning and community consensus, RFCs can be declined.
@@ -63,7 +72,8 @@ Each RFC goes through these stages:
 Once accepted:
 
 - The implementation is tracked through linked GitHub work items or repositories as relevant.
-- Any changes during implementation that deviate from the RFC must go through a **follow-up RFC** or an **amendment** process.
+- Any changes during implementation that deviate from the RFC must go through a **follow-up RFC** or an **amendment**
+  process.
 - An RFC can be **revised** in-place via a new RFC that supersedes or modifies the previous one.
 
 ## Why we have this process

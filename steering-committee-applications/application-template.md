@@ -15,7 +15,8 @@
 
 **Proposed term** (e.g., Jan–Dec 2026)
 
-**Primary focus area(s)** (e.g., Patina, Secure EC firmware, OS-EC service interface, supply chain security, documentation & training, governance, partner engagement)
+**Primary focus area(s)** (e.g., Patina, Secure EC firmware, OS-EC service interface, supply chain security,
+documentation & training, governance, partner engagement)
 
 </div>
 
@@ -71,9 +72,9 @@ background to ODP's needs and describe how you will contribute to the partnershi
 - **Example 2 (ecosystem & partnerships):**
 
   "Applicant is interested in lowering onboarding friction for new contributors and growing ODP's partner network.
-  Applicant brings proven expertise in developer ecosystem growth and relationships with key decision-makers at
-  multiple OEMs and silicon vendors. Applicant is motivated to make ODP the industry-standard collaboration point for
-  platform firmware and expand participation beyond early adopters."
+  Applicant brings proven expertise in developer ecosystem growth and relationships with key decision-makers at multiple
+  OEMs and silicon vendors. Applicant is motivated to make ODP the industry-standard collaboration point for platform
+  firmware and expand participation beyond early adopters."
 
 - **Example 3 (governance & community):**
 
