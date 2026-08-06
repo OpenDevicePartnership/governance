@@ -8,7 +8,8 @@
 
 ### Karan Dhillon • Principal Product Manager • Microsoft
 
-**`karand@microsoft.com` / [dhillonk (GitHub)](https://github.com/dhillonk) / [linkedin.com/in/kadhillon](https://www.linkedin.com/in/kadhillon/)**
+**`karand@microsoft.com` / [dhillonk (GitHub)](https://github.com/dhillonk) /
+[linkedin.com/in/kadhillon](https://www.linkedin.com/in/kadhillon/)**
 
 **Proposed Term:** Jan 2026 – Dec 2026
 
@@ -20,9 +21,12 @@
 
 ## Professional Background
 
-Karan Dhillon is a Principal Product Manager in Microsoft's Windows System Silicon Integration (WSSI) team, where he leads the Open Device Partnership (ODP). With over 8 years of experience in devices teams at Microsoft and another 5 years in the device management space, Karan brings a commitment to building secure, reliable and manageable devices.
+Karan Dhillon is a Principal Product Manager in Microsoft's Windows System Silicon Integration (WSSI) team, where he
+leads the Open Device Partnership (ODP). With over 8 years of experience in devices teams at Microsoft and another 5
+years in the device management space, Karan brings a commitment to building secure, reliable and manageable devices.
 
-As a Product Manager, Karan has a track record of successfully delivering  projects with complex cross-organizational dependencies.
+As a Product Manager, Karan has a track record of successfully delivering projects with complex cross-organizational
+dependencies.
 
 ## Value Added to ODP
 
@@ -40,21 +44,24 @@ Key contributions to date:
 - Drive the implementation of the ODP website.
 - Drive the documentation project to implement docs for ODP technologies.
 
-Karan envisions ODP will enable OEMs to deliver secure devices with exceptional user-experience for scenarios currently delivered via UEFI Firmware.
+Karan envisions ODP will enable OEMs to deliver secure devices with exceptional user-experience for scenarios currently
+delivered via UEFI Firmware.
 
 ## Commitments & Outcomes
 
 These are the key outcomes I plan to focus on during this term:
 
 - **ODP Governance**
-  - Organization of the ODP steering committee: once a month steering committee meetings with clear agendas and outcome tracking.
-    Success = Monthly meetings of the steering committee with agendas published in advance and tracked outcomes.
+  - Organization of the ODP steering committee: once a month steering committee meetings with clear agendas and outcome
+    tracking. Success = Monthly meetings of the steering committee with agendas published in advance and tracked
+    outcomes.
 - **Minimal Firmware**
-  - Work with various stakeholders to identify attack surface reduction strategy for Patina Firmware.
-    Success = A specification for delivering customer scenarios from a high level OS which are currently delivered from UEFI Firmware.
+  - Work with various stakeholders to identify attack surface reduction strategy for Patina Firmware. Success = A
+    specification for delivering customer scenarios from a high level OS which are currently delivered from UEFI
+    Firmware.
 - **Broaden ODP Adoption**
-  - Onboard more OEMs, IHVs and silicon providers into the ODP alliance.
-    Success = At least two more OEMs and 1 more IHV is onboarded onto ODP.
+  - Onboard more OEMs, IHVs and silicon providers into the ODP alliance. Success = At least two more OEMs and 1 more IHV
+    is onboarded onto ODP.
 
 ## Year in Review (If Renewing)
 

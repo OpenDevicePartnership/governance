@@ -20,10 +20,10 @@ is required, the pull request may be merged by an admin by overriding the approv
 expected timelines for merging the pull request if necessary. If that is not required at the time, the pull request can
 simply be merged with two approvals as usual.
 
-1. An automated process creates a pull request to the [`OpenDevicePartnership/governance`](https://github.com/OpenDevicePartnership/governance)
-   repository to add a new agenda markdown file in the `steering-committee-meetings` directory for the next meeting.
-   The pull request is assigned to the meeting chair. The pull request includes all ODP Steering Committee members as
-   reviewers.
+1. An automated process creates a pull request to the
+   [`OpenDevicePartnership/governance`](https://github.com/OpenDevicePartnership/governance) repository to add a new
+   agenda markdown file in the `steering-committee-meetings` directory for the next meeting. The pull request is
+   assigned to the meeting chair. The pull request includes all ODP Steering Committee members as reviewers.
    - This pull request must not add any content other than the new agenda markdown file with template fields customized
      for the next meeting.
 2. Any ODP Steering Committee member can merge the file once at least one other ODP Steering Committee member has
@@ -31,35 +31,35 @@ simply be merged with two approvals as usual.
    manner after it has received the necessary approvals, ideally within three business days of the pull request being
    created.
 3. Once the upcoming meeting agenda file is merged, pull requests may be created to add items to the agenda.
-    - The pull request should include a description of the agenda item(s) and any relevant links to documentation or
-      discussions to support the item(s) in the markdown file.
-    - The pull request should be assigned to the meeting chair and include all ODP Steering Committee members as
-      reviewers.
-    - At least two ODP Steering Committee members must approve the pull request for it to be merged. The meeting chair
-      is responsible for ensuring that pull requests to add items to the agenda are merged in a timely manner after they
-      have received the necessary approvals. The meeting chair should prioritize reviewing and approving pull requests,
-      but their approval is not mandatory.
-    - Reviewers should ensure that:
-      - The agenda item is relevant to the Open Device Partnership organization and appropriate for discussion in the
-        Steering Committee meeting.
-        - In particular, that the item is not primarily technical in nature and would be more appropriate for
-          discussion in a technical meeting led by the relevant project lead.
-      - The description of the agenda item is clear and includes sufficient context or links to support the proposed
-        discussion.
-      - The agenda item requires a decision to be made by the Steering Committee or is otherwise important to discuss
-        in the Steering Committee meeting and cannot be resolved through asynchronous discussion on GitHub.
-        - Note: "Asynchronous discussion" refers to discussions that can be conducted through GitHub issues, pull
-          requests, or other communication channels without requiring a real-time meeting.
+   - The pull request should include a description of the agenda item(s) and any relevant links to documentation or
+     discussions to support the item(s) in the markdown file.
+   - The pull request should be assigned to the meeting chair and include all ODP Steering Committee members as
+     reviewers.
+   - At least two ODP Steering Committee members must approve the pull request for it to be merged. The meeting chair is
+     responsible for ensuring that pull requests to add items to the agenda are merged in a timely manner after they
+     have received the necessary approvals. The meeting chair should prioritize reviewing and approving pull requests,
+     but their approval is not mandatory.
+   - Reviewers should ensure that:
+     - The agenda item is relevant to the Open Device Partnership organization and appropriate for discussion in the
+       Steering Committee meeting.
+       - In particular, that the item is not primarily technical in nature and would be more appropriate for discussion
+         in a technical meeting led by the relevant project lead.
+     - The description of the agenda item is clear and includes sufficient context or links to support the proposed
+       discussion.
+     - The agenda item requires a decision to be made by the Steering Committee or is otherwise important to discuss in
+       the Steering Committee meeting and cannot be resolved through asynchronous discussion on GitHub.
+       - Note: "Asynchronous discussion" refers to discussions that can be conducted through GitHub issues, pull
+         requests, or other communication channels without requiring a real-time meeting.
 4. At least two days prior to the scheduled meeting, the meeting chair should ensure that the agenda is finalized and
    published by merging any remaining open pull requests for agenda items for the upcoming meeting. The meeting chair
    should also ensure that any pull requests for agenda items that have not received the necessary approvals are closed
    and that the contributors to those pull requests are informed of the reason for closing the pull request.
    - The meeting chair is responsible for creating a pull request that updates the status in the agenda file to "Final".
-     - This pull request only requires a single approval from an ODP Steering Committee member to be merged. The
-       meeting chair should merge the pull request to finalize the agenda in a timely manner, ideally within one
-       business day after all pull requests for agenda items have been merged and the agenda is finalized.
-     - New items may not be added after the agenda is finalized, but existing items may be modified or removed as
-       needed with the necessary approvals.
+     - This pull request only requires a single approval from an ODP Steering Committee member to be merged. The meeting
+       chair should merge the pull request to finalize the agenda in a timely manner, ideally within one business day
+       after all pull requests for agenda items have been merged and the agenda is finalized.
+     - New items may not be added after the agenda is finalized, but existing items may be modified or removed as needed
+       with the necessary approvals.
 
 ### Meeting Agenda Statuses
 
@@ -93,8 +93,8 @@ When a meeting is canceled, the meeting chair is responsible for the following:
   process for adding a new agenda file.
 - Determine whether any agenda items planned for the canceled meeting should be carried over to the next meeting or can
   be resolved through asynchronous discussion on GitHub. If an item must be included in a future meeting, the chair
-  creates a pull request to the next meeting's agenda file that adds the relevant items, following the normal process for
-  adding agenda items, including obtaining the necessary approvals from ODP Steering Committee members.
+  creates a pull request to the next meeting's agenda file that adds the relevant items, following the normal process
+  for adding agenda items, including obtaining the necessary approvals from ODP Steering Committee members.
 
 ## Meeting Process
 
@@ -112,9 +112,9 @@ interest of the Open Device Partnership project and community.
 - Major new topic areas are not allowed to be added to the agenda in the meeting. They must be added to a future meeting
   agenda in a pull request.
 - Non-Steering Committee members are welcome to attend the meeting and participate in the discussion, but they do not
-  have voting rights in any decisions made by the Steering Committee. The chair should ensure that non-Steering Committee
-  members have an opportunity to share their perspectives during the discussion, but the final decision on any agenda
-  item is made by the Steering Committee members.
+  have voting rights in any decisions made by the Steering Committee. The chair should ensure that non-Steering
+  Committee members have an opportunity to share their perspectives during the discussion, but the final decision on any
+  agenda item is made by the Steering Committee members.
 
 ## Meeting Follow-Up
 
